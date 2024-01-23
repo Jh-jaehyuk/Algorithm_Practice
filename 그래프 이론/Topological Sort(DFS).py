@@ -2,7 +2,7 @@
 
 # 노드의 개수와 간선의 개수 입력받기
 v, e = map(int, input().split())
-# 모든 노드에 대한 진입 차수는 0으로 초기화
+# 각 노드별 방문처리를 위한 배열 만들기
 visited = [0] * (v + 1)
 # 각 노드에 연결된 간선 정보를 담기 위한 연결 리스트(그래프) 초기화
 graph = [[] for i in range(v + 1)]
@@ -11,7 +11,7 @@ for _ in range(e):
     a, b = map(int, input().split())
     graph[a].append(b)  # 정점 A에서 B로 이동 가능
     
-# 위상 정렬 결과 저장할 배열 만들기
+# 위상 정렬 결과를 저장할 배열 만들기
 result = []
 
 # DFS를 이용한 위상 정렬 함수
@@ -22,10 +22,10 @@ def DFS(int node):
 	visited[node] = 1 # 노드 방문처리 하기
 	
 	for i in graph[node]:
-		if not visited[i]:
+		if not visited[i]: # 방문하지 않은 노드라면 DFS 진행
 			DFS(i)
 			
-	result.append(node)
+	result.append(node) # 노드를 결과에 저장하기
 	
 
 DFS(1)
