@@ -15,7 +15,7 @@ for _ in range(e):
 result = []
 
 # DFS를 이용한 위상 정렬 함수
-def DFS(int node):
+def DFS(node):
 	if visited[node]: # 이미 방문한 노드라면 종료
 		return
 	
