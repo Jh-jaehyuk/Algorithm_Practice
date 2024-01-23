@@ -8,8 +8,8 @@ visited = [0] * (v + 1)
 graph = [[] for i in range(v + 1)]
 # 방향 그래프의 모든 간선 정보를 입력받기
 for _ in range(e):
-    a, b = map(int, input().split())
-    graph[a].append(b)  # 정점 A에서 B로 이동 가능
+	a, b = map(int, input().split())
+	graph[a].append(b)  # 정점 A에서 B로 이동 가능
     
 # 위상 정렬 결과를 저장할 배열 만들기
 result = []
